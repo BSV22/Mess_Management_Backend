@@ -7,7 +7,6 @@ const Transaction = sequelize.define('Transaction', {
         primaryKey: true,
         autoIncrement: true
     },
-    // Links to the Student who made the transaction
     studentRollNo: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -16,6 +15,7 @@ const Transaction = sequelize.define('Transaction', {
             key: 'rollNo'
         }
     },
+    
     amount: {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false
@@ -23,6 +23,11 @@ const Transaction = sequelize.define('Transaction', {
     type: {
         type: DataTypes.ENUM('Monthly Fee', 'Extra Item', 'Rebate'),
         allowNull: false
+    },
+    
+    itemName: {
+        type: DataTypes.STRING, // e.g., "Extra Egg", "Special Sweet"
+        allowNull: true
     },
     date: {
         type: DataTypes.DATE,
