@@ -10,10 +10,7 @@ const Feedback = sequelize.define('Feedback', {
     studentRollNo: {
         type: DataTypes.STRING,
         allowNull: false,
-        references: {
-            model: 'Students',
-            key: 'rollNo'
-        }
+        references: { model: 'Students', key: 'rollNo' }
     },
     rating: {
         type: DataTypes.INTEGER,
@@ -27,8 +24,6 @@ const Feedback = sequelize.define('Feedback', {
         type: DataTypes.ENUM('Food Quality', 'Cleanliness', 'Service', 'Other'),
         defaultValue: 'Food Quality'
     }
-}, {
-    timestamps: true
-});
+}, { timestamps: true });
 
 module.exports = Feedback;

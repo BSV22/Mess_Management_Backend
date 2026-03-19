@@ -16,15 +16,13 @@ const Menu = sequelize.define('Menu', {
         allowNull: false
     },
     items: {
-        type: DataTypes.TEXT, // Using text to store the list of food items
+        type: DataTypes.TEXT,
         allowNull: false
     },
     voteCount: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     }
-}, {
-    timestamps: false
-});
+}, { timestamps: false });
 
 module.exports = Menu;

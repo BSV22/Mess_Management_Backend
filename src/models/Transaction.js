@@ -10,12 +10,12 @@ const Transaction = sequelize.define('Transaction', {
     studentRollNo: {
         type: DataTypes.STRING,
         allowNull: false,
-        references: {
-            model: 'Students',
-            key: 'rollNo'
-        }
+        references: { model: 'Students', key: 'rollNo' }
     },
-    
+    itemName: {
+        type: DataTypes.STRING,
+        allowNull: true // True because Monthly Fees don't have an item name
+    },
     amount: {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false
@@ -23,11 +23,6 @@ const Transaction = sequelize.define('Transaction', {
     type: {
         type: DataTypes.ENUM('Monthly Fee', 'Extra Item', 'Rebate'),
         allowNull: false
-    },
-    
-    itemName: {
-        type: DataTypes.STRING, // e.g., "Extra Egg", "Special Sweet"
-        allowNull: true
     },
     date: {
         type: DataTypes.DATE,

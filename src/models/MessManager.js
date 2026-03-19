@@ -19,8 +19,6 @@ const MessManager = sequelize.define('MessManager', {
         type: DataTypes.ENUM('Manager', 'Staff', 'Admin'),
         defaultValue: 'Manager'
     }
-}, {
-    timestamps: true
-});
+}, { timestamps: true });
 
 module.exports = MessManager;

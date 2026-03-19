@@ -6,6 +6,8 @@ const Transaction = require('./models/Transaction');
 const Feedback = require('./models/Feedback');
 const MessManager = require('./models/MessManager');
 const Rebate = require('./models/Rebate');
+const ExtraItem = require('./models/ExtraItem');
+const db_controller = require('./models/db_controller');
 
 const app = express();
 const PORT = 3000; // Keeping the repo's original port

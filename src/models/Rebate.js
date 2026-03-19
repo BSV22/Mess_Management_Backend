@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 
-const Rebate = sequelize.define('Rebate', {
-    rebateId: {
+const RebateRequest = sequelize.define('RebateRequest', {
+    requestId: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
@@ -10,10 +10,7 @@ const Rebate = sequelize.define('Rebate', {
     studentRollNo: {
         type: DataTypes.STRING,
         allowNull: false,
-        references: {
-            model: 'Students',
-            key: 'rollNo'
-        }
+        references: { model: 'Students', key: 'rollNo' }
     },
     startDate: {
         type: DataTypes.DATEONLY,
@@ -24,15 +21,12 @@ const Rebate = sequelize.define('Rebate', {
         allowNull: false
     },
     reason: {
-        type: DataTypes.TEXT,
-        allowNull: false
+        type: DataTypes.TEXT
     },
     status: {
         type: DataTypes.ENUM('Pending', 'Approved', 'Rejected'),
         defaultValue: 'Pending'
     }
-}, {
-    timestamps: true
-});
+}, { timestamps: true });
 
-module.exports = Rebate;
+module.exports = RebateRequest;

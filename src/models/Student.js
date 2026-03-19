@@ -28,8 +28,6 @@ const Student = sequelize.define('Student', {
         type: DataTypes.ENUM('Active', 'Suspended'),
         defaultValue: 'Active'
     }
-}, {
-    timestamps: true // Adds createdAt and updatedAt columns automatically
-});
+}, { timestamps: true });
 
 module.exports = Student;
